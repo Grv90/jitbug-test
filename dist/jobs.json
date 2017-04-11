@@ -1,0 +1,82 @@
+{
+    "open":[
+      {
+        "centre": "Epsom Kindergarten",
+        "jobtitle": "Qualified teacher",
+        "start": "2017-04-11 08:00",
+        "end": "2017-04-11 15:00",
+        "sentat": "2017-04-06 20:00",
+        "avail": 2,
+        "seenby":3,
+        "sentto": 3,
+        "unavailable": 1
+      },
+      {
+        "centre": "Pakuranga Kindergarten",
+        "jobtitle": "Qualified teacher",
+        "start": "2017-04-14 08:00",
+        "end": "2017-04-20 15:00",
+        "sentat": "2017-04-07 20:00",
+        "avail": 2,
+        "seenby":3,
+        "sentto": 0,
+        "unavailable": 1
+      },
+      {
+        "centre": "Westmere Kindergarten",
+        "jobtitle": "Unqualified teacher",
+        "start": "2017-05-14 08:00",
+        "end": "2017-05-15 15:00",
+        "sentat": "2017-04-07 21:00",
+        "avail": 0,
+        "seenby":3,
+        "sentto": 0,
+        "unavailable": 3
+      },
+      {
+        "centre": "Ellerslie Kindergarten",
+        "jobtitle": "Unqualified teacher",
+        "start": "2017-04-23 08:00",
+        "end": "2017-05-09 15:00",
+        "sentat": "2017-04-07 21:00",
+        "avail": 6,
+        "seenby":3,
+        "sentto": 0,
+        "unavailable": 1
+      }
+    ],
+    "closed":[
+      {
+        "centre": "Howick Kindergarten",
+        "jobtitle": "Unqualified teacher",
+        "start": "2017-04-07 08:00",
+        "end": "2017-04-07 15:00",
+        "closedat": "2017-04-07 07:30",
+        "confirmedCdd": "Graham Crackers"
+      },
+      {
+        "centre": "Westmere Kindergarten",
+        "jobtitle": "Unqualified teacher",
+        "start": "2017-04-10 08:00",
+        "end": "2017-04-12 15:00",
+        "closedat": "2017-04-06 21:00",
+        "confirmedCdd": "Ella Grey"
+      },
+      {
+        "centre": "Takapuna Kindergarten",
+        "jobtitle": "Unqualified teacher",
+        "start": "2017-05-14 08:00",
+        "end": "2017-05-15 15:00",
+        "closedat": "2017-04-06 20:30",
+        "confirmedCdd": "Graham Crackers"
+      },
+      {
+        "centre": "Myers Park Kindergarten",
+        "jobtitle": "Unqualified teacher",
+        "start": "2017-04-29 08:00",
+        "end": "2017-04-30 16:30",
+        "closedat": "2017-04-05 12:30",
+        "confirmedCdd": "Ella Grey"
+      }
+  ]
+}

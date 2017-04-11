@@ -1,0 +1,37 @@
+
+  [ {
+      "centre": "St Heliers Kindergarten",
+      "candidates": [{"name": "John Doe", "thumbnail": "john.jpeg"}, {"name": "Ella Grey", "thumbnail":"ella.png"} ],
+      "status":"Confirmed",
+      "start":"2017-04-10",
+      "end":"2017-04-10"
+    },
+    {
+      "centre": "Epsom Kindergarten",
+      "candidates": [{"name": "Ella Grey", "thumbnail":"ella.png"} ],
+      "status":"Confirmed",
+      "start":"2017-04-12",
+      "end":"2017-04-13"
+    },
+    {
+      "centre": "Herne Bay Kindergarten",
+      "candidates": [],
+      "status":"Unconfirmed",
+      "start":"2017-04-13",
+      "end":"2017-04-13"
+    },
+    {
+      "centre": "St Heliers Kindergarten",
+      "candidates": [{"name": "Graham Crackers", "thumbnail": "graham.jpg"} ],
+      "status":"Unconfirmed",
+      "start":"2017-04-19",
+      "end":"2017-04-20"
+    },
+    {
+      "centre": "St Heliers Kindergarten",
+      "candidates": [{"name": "Ella Zoo", "thumbnail":"ella.png"}],
+      "status":"Confirmed",
+      "start":"2017-04-04",
+      "end":"2017-04-05"
+    }
+  ]

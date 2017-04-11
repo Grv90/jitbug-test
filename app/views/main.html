@@ -1,0 +1,153 @@
+<div class="row padding">
+  <div class="col-md-5 col-xs-12">
+    <h3 class="componentTitle">Jobs This Week</h3>
+    <span><small><i>Listing of confirmed and unconfirmed Jobs</i></small></span>
+    <hr />
+    <div class="row text-center padding">
+      <div class="btn-group">
+        <button class="btn btn-primary" mwl-date-modifier date="viewDate" decrement="calendarView" ng-click="cellIsOpen = false">
+            Previous Week
+          </button>
+        <button class="btn btn-default" mwl-date-modifier date="viewDate" set-to-today ng-click="cellIsOpen = false">
+            Current
+          </button>
+        <button class="btn btn-primary" mwl-date-modifier date="viewDate" increment="calendarView" ng-click="cellIsOpen = false">
+            Next Week
+          </button>
+      </div>
+    </div>
+    <mwl-calendar events="events" view="calendarView" view-title="calendarTitle" view-date="viewDate" on-event-click="eventClicked(calendarEvent)" on-event-times-changed="eventTimesChanged(calendarEvent); calendarEvent.startsAt = calendarNewEventStart; calendarEvent.endsAt = calendarNewEventEnd"
+        cell-is-open="cellIsOpen" day-view-start="06:00" day-view-end="22:59" day-view-split="30" cell-modifier="modifyCell(calendarCell)" cell-auto-open-disabled="true" on-timespan-click="timespanClicked(calendarDate, calendarCell)">
+    </mwl-calendar>
+    <small><i><span class="gylphicon glyphicon-asterisk"></span> Click on event to get complete details.</i></small>
+
+  </div>
+  <div class="col-md-7 col-xs-12 ">
+    <h3 class="componentTitle">Open Jobs</h3>
+    <span><small><i>Listing of all the open jobs</i></small></span>
+
+    <hr />
+    <table st-table="displayedCollectionForOpenJobs" st-safe-src="openJobs " class="table table-responsive table-striped table-hover ">
+      <thead class="thead-default ">
+        <tr>
+          <th st-sort="center">Center</th>
+          <th st-sort="jobtitle">Job Title</th>
+          <th st-sort="start">Start</th>
+          <th st-sort="end">End</th>
+          <th st-sort="sentat">Sent At</th>
+          <th st-sort="avail">Available</th>
+          <th st-sort="seenby">SeenBy</th>
+          <th st-sort="sentto">SentTo</th>
+          <th st-sort="unavailable">Unavailable</th>
+        </tr>
+        <tr>
+          <th colspan="12"><input st-search="" class="form-control " placeholder="Search ... " type="text " /></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="row in displayedCollectionForOpenJobs ">
+          <td>{{row.centre}}</td>
+          <td><span ng-if="row.jobtitle=='Qualified teacher'" class="label label-success">{{row.jobtitle}}</span>
+            <span ng-if="row.jobtitle=='Unqualified teacher'" class="label label-danger">{{row.jobtitle}}</span>
+          </td>
+          <td>{{row.start | date:'short'}}</td>
+          <td>{{row.end}}</td>
+          <td>{{row.sentat}}</td>
+          <td class="text-center"><span ng-if="row.avail==0" class="label label-danger">{{row.avail}}</span>
+            <span ng-if="row.avail!=0">{{row.avail}}</span>
+          </td>
+          <td class="text-center">
+            <span ng-if="row.seenby==0" class="label label-danger">{{row.seenby}}</span>
+            <span ng-if="row.seenby!=0">{{row.seenby}}</span>
+          </td>
+          <td class="text-center">
+            <span ng-if="row.sentto==0" class="label label-danger">{{row.sentto}}</span>
+            <span ng-if="row.sentto!=0">{{row.sentto}}</span>
+          </td>
+          <td class="text-center">
+            <span ng-if="row.unavailable==0" class="label label-danger">{{row.unavailable}}</span>
+            <span ng-if="row.unavailable!=0">{{row.unavailable}}</span>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="12" class="text-center">
+            <div st-pagination="" st-items-by-page="3" st-displayed-pages="7"></div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>
+<div class="row padding">
+  <div class="col-md-5 col-xs-12">
+    <h3 class="componentTitle">User Search</h3>
+    <span><small><i>Search using the users and organistaion</i></small></span>
+    <hr />
+    <h5>Select option to filter your search &nbsp;
+      <label>
+    <input type="radio" ng-model="option.label" value="Users">
+    Users
+  </label>
+  &nbsp;
+  <label>
+    <input type="radio" ng-model="option.label" value="Organistaion">
+    Organisation
+  </label>
+  </h5>
+    <div class="row">
+      <div class="col-md-7">
+        <input type="text" name="input" placeholder="Search for {{option.label}}" class="form-control ">
+      </div>
+      <div class="col-md-3 ">
+        <button class="btn btn-primary "><span class="glyphicon glyphicon-search "></span>&nbsp;&nbsp;Look</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-7 col-xs-12 ">
+    <h3 class="componentTitle ">Closed Jobs</h3>
+    <span><small><i>Listing of all the closed jobs</i></small></span>
+    <hr />
+    <table st-table="displayedCollectionForClosedJobs" st-safe-src="closedJobs " class="table table-responsive table-striped table-hover ">
+      <thead class="thead-default ">
+        <tr>
+          <th st-sort="center">Center</th>
+          <th st-sort="jobtitle ">Job Title</th>
+          <th st-sort="start">Start</th>
+          <th st-sort="end">End</th>
+          <th st-sort="closedat">Closed At</th>
+          <th st-sort="confirmedCdd">Confirmed</th>
+        </tr>
+        <tr>
+          <th colspan="12 "><input st-search="" class="form-control " placeholder="Search ... " type="text " /></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="row in displayedCollectionForClosedJobs">
+          <td>{{row.centre}}</td>
+          <td><span ng-if="row.jobtitle=='Qualified teacher' " class="label label-success ">{{row.jobtitle}}</span>
+            <span ng-if="row.jobtitle=='Unqualified teacher' " class="label label-danger ">{{row.jobtitle}}</span>
+          </td>
+          <td>{{row.start}}</td>
+          <td>{{row.end}}</td>
+          <td>
+            {{row.closedat}}
+          </td>
+          <td>
+            <span class="label label-info ">{{row.confirmedCdd}}</span>
+          </td>
+
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="12 " class="text-center ">
+            <div st-pagination=" " st-items-by-page="3 " st-displayed-pages="7 "></div>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

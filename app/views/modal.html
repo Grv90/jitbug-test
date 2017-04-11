@@ -1,0 +1,43 @@
+<div class="modal-header">
+  <h3 class="modal-title">{{ vm.event.title}}</h3>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-md-6">
+      <p>Start Date:
+        <pre>{{ vm.event.startsAt | date:'medium' }}</pre>
+      </p>
+    </div>
+    <div class="col-md-6">
+      <p>Start Date:
+        <pre>{{ vm.event.endsAt | date:'medium' }}</pre>
+      </p>
+    </div>
+  </div>
+  <hr />
+  <p>Candidates Status is <span ng-if="vm.event.status=='Confirmed'" class="label label-success">Confirmed</span><span ng-if="vm.event.status=='Unconfirmed'" class="label label-danger">Unconfirmed</span>
+  </p>
+  <hr />
+  <p>List of candidates:
+    <div class="row">
+      <div class="col-md-4" ng-repeat="candidate in vm.event.candidates">
+        <div class="thumbnail">
+          <a>
+            <img src="images/{{candidate.thumbnail}}" alt={{candidate.thumbnail}} style="width:100%">
+            <div class="caption">
+              <p>{{candidate.name}}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4" ng-if="vm.event.candidates.length==0">
+        <p class="info">
+          <span class="glyphicon glyphicon-info-sign"></span>&nbsp;No Candidates found.
+        </p>
+      </div>
+    </div>
+  </p>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="$close()">OK</button>
+</div>
